@@ -1,13 +1,18 @@
-var users = require("../../app/controllers/users.server.controller");
+var users = require("../../app/controllers/users.server.controller"),
+    passport = require("passport");
 
 module.exports = function(app) {
-    app.route("/users")
-        .post(users.create)
-        .get(users.list);
+    app.route("/signup")
+        .get(users.renderSignup)
+        .post(users.signup);
         
-    app.route("/users/:userID")
-        .get(users.read)
-        .put(users.update);
+    app.route("/signin")
+        .get(users.renderSignin)
+        .post(passport.authenticate("local", {
+            successRedirect : "/",
+            failureRedirect : "/signin",
+            failureFlash : true
+        }));
         
-    app.param("userID", users.userByID);
+    app.get("/signout", users.signout);
 };
