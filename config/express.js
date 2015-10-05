@@ -24,7 +24,7 @@ module.exports = function() {
     app.use(methodOverride());
     
     app.use(session({
-        saveUnitialized : true,
+        saveUninitialized : true,
         resave : true,
         secret : config.sessionSecret
     }));
