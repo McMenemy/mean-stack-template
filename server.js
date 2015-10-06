@@ -10,6 +10,6 @@ var passport = passport();
 
 app.listen(process.env.PORT, process.env.IP);
 
-module.exports = app;
-
 console.log("server running");
+
+module.exports = app;
