@@ -1,7 +1,6 @@
-// Invoke 'strict' JavaScript mode
 'use strict';
 
-// Configure the 'example' module routes
+// Configure routes
 angular.module('example').config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.

@@ -1,7 +1,6 @@
-// Invoke 'strict' JavaScript mode
 'use strict';
 
-// Configure the 'articles' module routes
+// Configure module routes
 angular.module('articles').config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.

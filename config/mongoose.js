@@ -1,10 +1,16 @@
-var config = require("./config"),
-    mongoose = require("mongoose");
-    
+'use strict';
+
+// load module dependicies
+var config = require('./config'),
+    mongoose = require('mongoose');
+ 
+// define mongoose configuration   
 module.exports = function() {
     var db = mongoose.connect(config.db);
-    require("../app/models/user.server.model");
-    require("../app/models/article.server.model");
+    
+    // load models 
+    require('../app/models/user.server.model');
+    require('../app/models/article.server.model');
     
     return db;
 };

@@ -1,7 +1,6 @@
-<!-- The create article view -->
 <section data-ng-controller="ArticlesController">
 	<h1>New Article</h1>
-	<!-- The new article form -->
+	<!-- new article form -->
 	<form data-ng-submit="create()" novalidate>
 		<div>
 			<label for="title">Title</label>
@@ -18,7 +17,7 @@
 		<div>
 			<input type="submit">
 		</div>
-		<!-- The error message element -->
+		<!-- error message -->
 		<div data-ng-show="error">
 			<strong data-ng-bind="error"></strong>
 		</div>

@@ -1,18 +1,17 @@
-// Invoke 'strict' JavaScript mode
 'use strict';
 
-// Load the module dependencies
+// Load module dependencies
 var users = require('../../app/controllers/users.server.controller'),
 	passport = require('passport');
 
-// Define the routes module' method
+// Define the routes
 module.exports = function(app) {
-	// Set up the 'signup' routes 
+	// Set up 'signup' routes 
 	app.route('/signup')
 	   .get(users.renderSignup)
 	   .post(users.signup);
 
-	// Set up the 'signin' routes 
+	// Set up 'signin' routes 
 	app.route('/signin')
 	   .get(users.renderSignin)
 	   .post(passport.authenticate('local', {
@@ -21,6 +20,6 @@ module.exports = function(app) {
 			failureFlash: true
 	   }));
 
-	// Set up the 'signout' route
+	// Set up 'signout' route
 	app.get('/signout', users.signout);
 };

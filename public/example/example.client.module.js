@@ -1,5 +1,4 @@
-// Invoke 'strict' JavaScript mode
 'use strict';
 
-// Create the 'example' module
+// create 'example' module
 angular.module('example', []);
